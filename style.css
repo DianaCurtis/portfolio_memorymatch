@@ -1,0 +1,125 @@
+body{
+    margin:0;
+    height:100vh;
+
+}
+
+.header-container{
+    height:25%;
+    width:100%;
+    background-color:pink;
+    /*text-align: center;*/
+}
+
+.logoContainer{
+    display:inline-block;
+    background-color:lime;
+    height:100%;
+    width:25%;
+}
+
+.logoPicture{
+    height: 80%;
+    width: 80%;
+    position: relative;
+    left: 10%;
+    top: 10%;
+}
+
+.picture{
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    width: 50%;
+    background-image: url(images/gameLogoPpl.jpg);
+}
+
+.headerDisplay{
+    display:inline-block;
+    height:100%;
+    width:70%;
+    position:relative;
+}
+
+.headerText{
+    position: absolute;
+}
+
+.game-container{
+    height:75%;
+    width:100%;
+}
+
+.stats{
+    height:100%;
+    width:25%;
+    display: inline-block;
+    background-color: plum;
+    vertical-align: top;
+}
+
+.games-played, .attempts, .accuracy, .createdButton{
+    width:100%;
+    height:25%;
+}
+
+.games-played{
+    background-color:purple;
+}
+
+.attempts{
+    background-color:mediumpurple;}
+
+.accuracy{
+    background-color:rebeccapurple;
+}
+.createdButton{
+    background-color:peachpuff;
+}
+
+.game-area{
+    height:100%;
+    width:74%;
+    display: inline-block;
+    background-color:deeppink;
+}
+
+.row{
+        width:100%;
+        height:33%;
+        font-size:0;
+}
+
+.card-container{
+    font-size:0;
+    width:16%;
+    height:100%;
+    display: inline-block;
+    background-color:black;
+}
+
+.card{
+    height: 80%;
+    width: 80%;
+    position:relative;
+    left:10%;
+    top:10%;
+    display: inline-block;
+}
+
+.front,.back{
+    height: 100%;
+    width:100%;
+    background-size:cover;
+    background-position:center;
+    position:absolute;
+}
+
+.front{
+    background-image:url(images/bears.jpg)
+}
+
+.back{
+    background-image: url(images/back.jpg);
+}
