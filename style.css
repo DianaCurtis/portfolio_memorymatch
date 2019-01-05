@@ -71,7 +71,7 @@ body{
     height:20%;
 }
 
-.games-played, .attempts, .accuracy{
+.games-played, .attempts, .accuracy,.createdButton{
     text-align: center;
 }
 
@@ -80,13 +80,13 @@ body{
 }
 
 .attempts{
-    background-color:sandybrown;}
+    background-color:grey;}
 
 .accuracy{
-    background-color:rosybrown;
+    background-color:tan;
 }
 .createdButton{
-    background-color:peachpuff;
+    background-color:black;
 }
 
 .game-area{

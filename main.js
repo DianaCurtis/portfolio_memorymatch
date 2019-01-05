@@ -28,6 +28,50 @@ function addClickHandlers(){
 }
 
 
+function dwigthSoundIdiot(nextSoundID) {
+    var soundIdiot = new Audio('sounds/dwightIdiot.mp3');
+
+
+    soundIdiot.onended=function(){
+        DwightSounds(nextSoundID);
+    };
+
+    soundIdiot.play();
+}
+
+
+function DwightSounds(soundID){
+    var cardInfo={
+        'images/bears.jpg': {'sound': 'sounds/Bears.mp3'},
+        'images/beats.jpg': {'sound': 'sounds/Beats.mp3'},
+        'images/battlestarGalactica.jpg': {'sound': 'sounds/BattleStarGallactica.mp3'},
+        'images/DwightandMose.jpg': {'sound': 'sounds/MoseBestFriend.mp3'},
+        'images/dwightBobblehead.jpg': {'sound': 'sounds/BobbleHead.mp3'},
+        'images/jello.jpg': {'sound': 'sounds/StaplerJello.mp3'},
+        'images/DwightandMoseFarm.jpg': {'sound': 'sounds/DwightSchruteFarms.jpg'},
+        'images/DwigthElf.jpg': {'sound': 'sounds/DwightElf.mp3'},
+        'images/DwigthKrimpus.jpg': {'sound': 'sounds/DwightDutchChristmas.mp3'}
+    };
+
+
+
+
+
+
+    if (!cardInfo[soundID]){
+        return;
+    }
+    var targetedItemSound=cardInfo[soundID]['sound'] ;
+
+    //console.log('targeted sound:',targetedItemSound);
+
+    var dwightSound = new Audio(targetedItemSound);
+    dwightSound.play();
+}
+
+
+
+
 function closeModal(){
     $('.hiddenDivContainer').addClass('hide');
 }
@@ -83,9 +127,9 @@ function resetGame(){
 
 function randomizeCards(){
     var pictures=[
-        'images/battlestarGalactica.jpg',
         'images/bears.jpg',
         'images/beats.jpg',
+        'images/battlestarGalactica.jpg',
         'images/DwightandMose.jpg',
         'images/DwightandMoseFarm.jpg',
         'images/dwightBobblehead.jpg',
@@ -144,11 +188,12 @@ function card_clicked(){
            //match_counter++;
            matches++;
            //console.log('matches',matches);
-
+           dwigthSoundIdiot(first_card_clicked.find('.front img').attr('src'));
 
 
            first_card_clicked=null;
            second_card_clicked=null;
+
 
 
             if(matches===total_possible_matches){
@@ -176,49 +221,39 @@ function card_clicked(){
 
 
 
+/*
+have an object that stores the information
+        var cardInfo={
+         'images/bears.jpg': {sound: 'link to sound', video: 'link to sound'}
+         'images/beats.jpg':  {sound: 'link to sound', video: 'link to sound'}
+           ....}
+when there is a match i want to display a video giving back story to the face of the card
+        if there is a match between the two cards
+            go to a new page that displays the video
+                first_card_clicked.find('.front img').attr('src') will give the "images/bears.jpg" or whatever it is
 
-//have an object that stores the information
-        // var cardInfo={
-       //   'images/bears.jpg': 'link',
-        //  'images/beats.jpg:  'link',
-        //    ....}
-// when there is a match i want to display a video giving back story to the face of the card
-        //if there is a match between the two cards
-            //go to a new page that displays the video
-                //first_card_clicked.find('.front img').attr('src') will give the images/bears.jpg or whatever it is
-
-
+*/
 
 // sound board to look up
 // idiot
 
-
-
-
-//function display modal
-
 /*
 
-when the page is loaded i want to call the function, onload
+function DwightSounds(){
+var cardInfo={
+    'images/bears.jpg': {'sound': 'sounds/dwightIdiot.mp3', 'video': 'link to video one'},
+    'images/beats.jpg': {'sound': 'link to sound two', 'video': 'link to video two'}
+};
 
-function alertFunction(){
-    var message='Welcome, to Schrute Farms. The object of the game is to match all the cards';
-    alter(message);
+
+
+var cardMatches=first_card_clicked.find('.front img').attr('src');
+var targetedItemSound=cardInfo[cardMatches].sound
+
+    var sound = new Audio(targetedItemSound);
+    sound.play();
+
 }
 
-add the image to the document and hide it
-when the modal is showing then the image should display
-when the modal is closed then the image should go away
-have the image be outside of the page
 */
-
-
-
-
-/*function alertFunction(){
-    var message='Welcome, to Schrute Farms. \nThe object of the game is to match all the cards.';
-    $('.hiddenImage').removeClass('hiddenImage');
-    alert(message);
-} */
-
 
