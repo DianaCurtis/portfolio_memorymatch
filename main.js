@@ -28,13 +28,13 @@ function addClickHandlers(){
 }
 
 
-function dwigthSoundIdiot(nextSoundID) {
+//nextSoundID
+function dwigthSoundIdiot() {
     var soundIdiot = new Audio('sounds/dwightIdiot.mp3');
 
-
-    soundIdiot.onended=function(){
-        DwightSounds(nextSoundID);
-    };
+    // soundIdiot.onended=function(){
+    //     DwightSounds(nextSoundID);
+    // };
 
     soundIdiot.play();
 }
@@ -48,13 +48,10 @@ function DwightSounds(soundID){
         'images/DwightandMose.jpg': {'sound': 'sounds/MoseBestFriend.mp3'},
         'images/dwightBobblehead.jpg': {'sound': 'sounds/BobbleHead.mp3'},
         'images/jello.jpg': {'sound': 'sounds/StaplerJello.mp3'},
-        'images/DwightandMoseFarm.jpg': {'sound': 'sounds/DwightSchruteFarms.jpg'},
+        'images/DwightandMoseFarm.jpg': {'sound': 'sounds/DwightSchruteFarms.mp3'},
         'images/DwigthElf.jpg': {'sound': 'sounds/DwightElf.mp3'},
         'images/DwigthKrimpus.jpg': {'sound': 'sounds/DwightDutchChristmas.mp3'}
     };
-
-
-
 
 
 
@@ -188,7 +185,13 @@ function card_clicked(){
            //match_counter++;
            matches++;
            //console.log('matches',matches);
-           dwigthSoundIdiot(first_card_clicked.find('.front img').attr('src'));
+           //dwigthSoundIdiot(first_card_clicked.find('.front img').attr('src'));
+
+
+           if(games_played===0){
+               DwightSounds(first_card_clicked.find('.front img').attr('src'));
+           }
+
 
 
            first_card_clicked=null;
@@ -202,12 +205,16 @@ function card_clicked(){
        }
        else{
            //console.log('they dont match')
+           dwigthSoundIdiot();
            timeOut = setTimeout(timerAddBack,2000);
        }
        accuracy=(matches/attempts)*100;
        accuracy=accuracy.toFixed(2);
        accuracy=accuracy+'%';
       // console.log('accuracy',accuracy);
+
+
+
    }
    else{
        if(timeOut!==null){clearTimeout(timeOut);}
@@ -237,22 +244,19 @@ when there is a match i want to display a video giving back story to the face of
 // sound board to look up
 // idiot
 
+
+
+
 /*
-
-function DwightSounds(){
-var cardInfo={
-    'images/bears.jpg': {'sound': 'sounds/dwightIdiot.mp3', 'video': 'link to video one'},
-    'images/beats.jpg': {'sound': 'link to sound two', 'video': 'link to video two'}
-};
+function dwigthSoundIdiot(nextSoundID) {
+    var soundIdiot = new Audio('sounds/dwightIdiot.mp3');
 
 
+    soundIdiot.onended=function(){
+        DwightSounds(nextSoundID);
+    };
 
-var cardMatches=first_card_clicked.find('.front img').attr('src');
-var targetedItemSound=cardInfo[cardMatches].sound
-
-    var sound = new Audio(targetedItemSound);
-    sound.play();
-
+    soundIdiot.play();
 }
 
 */
