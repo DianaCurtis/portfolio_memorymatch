@@ -23,7 +23,6 @@ function addClickHandlers(){
 
     $('.hiddenDivContainer').on('click','.closeModel',closeModel);
     $('.game-area').on('click','.card',card_clicked);
-    // $('.game-area').on('click','.card',beenClicked);
     $('.game-area').on('click','.card',display_stats);
     $('.createdButton').on('click', '.reset', resetGame);
 
@@ -77,9 +76,6 @@ function closeModel(){
     $('.hiddenDivContainer').addClass('hide');
 }
 
-function beenClicked(){
-    $(this).addClass('beenclicked');
-}
 
 function timerAddBack(){
     first_card_clicked.find('.back').show();
