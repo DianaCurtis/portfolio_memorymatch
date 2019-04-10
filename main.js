@@ -19,7 +19,8 @@ function initializeApp(){
 
 
 function addClickHandlers(){
-    $('.hiddenDivContainer').on('click','.closeModal',closeModal);
+
+    $('.hiddenDivContainer').on('click','.closeModel',closeModel);
     $('.game-area').on('click','.card',card_clicked);
     $('.game-area').on('click','.card',beenClicked);
     $('.game-area').on('click','.card',display_stats);
@@ -63,7 +64,7 @@ function DwightSounds(soundID){
 
 
 
-function closeModal(){
+function closeModel(){
     $('.hiddenDivContainer').addClass('hide');
 }
 

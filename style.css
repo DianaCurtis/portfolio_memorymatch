@@ -148,7 +148,7 @@ div.back>img{
 }
 
 .hiddenDivContainer{
-    display: none; /* remember to comment this out*/
+   /* display: none; */ /* remember to comment this out*/
     background-color: black;
     border: 2px black solid;
     position: absolute;
@@ -189,14 +189,14 @@ div.back>img{
     color: white;
 }
 
-.closeModalButton{
+.closeModelButton{
     position: relative;
     top: -15%;
 }
 
 
 
-.closeModal{
+.closeModel{
     position:relative;
     bottom:0%;
     left:5%;
