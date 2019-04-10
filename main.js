@@ -9,6 +9,7 @@ var matches = 0;
 var attempts = 0;
 var accuracy = 0;
 var games_played = 0;
+var audioActive = false;
 
 
 
@@ -22,7 +23,7 @@ function addClickHandlers(){
 
     $('.hiddenDivContainer').on('click','.closeModel',closeModel);
     $('.game-area').on('click','.card',card_clicked);
-    $('.game-area').on('click','.card',beenClicked);
+    // $('.game-area').on('click','.card',beenClicked);
     $('.game-area').on('click','.card',display_stats);
     $('.createdButton').on('click', '.reset', resetGame);
 
@@ -31,9 +32,13 @@ function addClickHandlers(){
 
 
 function dwigthSoundIdiot() {
+    audioActive = true;
     var soundIdiot = new Audio('sounds/dwightIdiot.mp3');
 
     soundIdiot.play();
+    soundIdiot.onended = function() {
+        audioActive = false;
+    };
 }
 
 
@@ -57,8 +62,12 @@ function DwightSounds(soundID){
     }
     var targetedItemSound=cardInfo[soundID]['sound'] ;
 
+    audioActive = true;
     var dwightSound = new Audio(targetedItemSound);
     dwightSound.play();
+    dwightSound.onended = function() {
+        audioActive = false;
+    };
 }
 
 
@@ -149,12 +158,12 @@ function randomizeCards(){
 
 
 function card_clicked(){
-
-    $(this).find('.back').hide();
-   
-    if($(this).hasClass('beenclicked')){
+    if(audioActive || $(this).hasClass('beenclicked')){
         return;
     }
+
+    $(this).find('.back').hide();
+    $(this).addClass('beenclicked');
 
 
    if(first_card_clicked === null){
