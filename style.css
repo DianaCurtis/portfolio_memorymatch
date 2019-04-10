@@ -1,8 +1,4 @@
 
-/*
-notes for memory match from tim
-*/
-
 
 body{
     margin:0;
@@ -15,7 +11,6 @@ body{
     height:25%;
     width:100%;
     background-color:goldenrod;
-    /*text-align: center;*/
 }
 
 .logoContainer{
