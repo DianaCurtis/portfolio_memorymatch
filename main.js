@@ -158,6 +158,7 @@ function card_clicked(){
         return;
     }
 
+
     $(this).find('.back').hide();
     $(this).addClass('beenclicked');
 
