@@ -148,7 +148,7 @@ div.back>img{
 }
 
 .hiddenDivContainer{
-   /* display: none; */ /* remember to comment this out*/
+    display: none; /* remember to comment this out*/
     background-color: black;
     border: 2px black solid;
     position: absolute;
