@@ -211,3 +211,7 @@ div.back>img{
     background-color:gray;
 }
 
+
+.audioLoad{
+    cursor: wait;
+}
