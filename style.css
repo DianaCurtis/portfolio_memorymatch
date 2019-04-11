@@ -213,5 +213,9 @@ div.back>img{
 
 
 .audioLoad{
-    cursor: wait;
+    /* cursor: wait;  */
+    cursor: url("images/soundOn.png"), auto;
+    /* cursor: url(" https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/happy.png"), auto; */
+   
+    /* background-image: url(images/soundOn.jpg); */
 }
