@@ -31,6 +31,7 @@ function addClickHandlers(){
 
 
 function dwigthSoundIdiot() {
+
     audioActive = true;
     var soundIdiot = new Audio('sounds/dwightIdiot.mp3');
 
@@ -38,6 +39,7 @@ function dwigthSoundIdiot() {
     soundIdiot.onended = function() {
         audioActive = false;
     };
+    
 }
 
 
@@ -66,7 +68,9 @@ function DwightSounds(soundID){
     dwightSound.play();
     dwightSound.onended = function() {
         audioActive = false;
+        $('.game-area').removeClass('audioLoad');
     };
+    
 }
 
 
@@ -182,12 +186,13 @@ function card_clicked(){
            first_card_clicked=null;
            second_card_clicked=null;
 
+           $('.game-area').addClass('audioLoad');
+
             if(matches===total_possible_matches){
                     $('.headerText').text('You have won!');
             }
        }
        else{
-           
            dwigthSoundIdiot();
            timeOut = setTimeout(timerAddBack,2000);
        }
