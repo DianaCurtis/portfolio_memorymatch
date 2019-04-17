@@ -58,7 +58,7 @@ div.picture {
     position: absolute;
     top: 25%;
     left: 25%;
-    font-size: 2.5rem; 
+    font-size: 5vmin; 
 }
 
 .game-container{
@@ -78,7 +78,7 @@ div.picture {
     display: inline-block;
     background-color: plum;
     vertical-align: top;
-    font-size: 1.2rem;
+    font-size: 4vmin;
 }
 
 .games-played, .attempts, .accuracy, .createdButton, .about{
