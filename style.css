@@ -2,6 +2,7 @@ body{
     margin:0;
     height:100vh;
     font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
 
 }
 
@@ -237,11 +238,27 @@ div.back>img{
 
 @media only screen and (max-width:700px){
 
-    .game-container > .stats{
-        display: flex;
+
+    .header-container{
+        height:15%;
     }
-    .games-played, .attempts, .accuracy,.createdButton{
-        flex-grow: 4;
-       
+
+    .stats{
+       display: block;
+       height:10%;
+       width:100%;
+       font-size:0;
+    }
+    .games-played, .attempts, .accuracy, .createdButton{
+        display: inline-block;
+        height:100%;
+        width:25%;
+        font-size: 0.7rem;
+        vertical-align: top;
+
+    }
+
+    .game-area{
+        width:100%;
     }
 }
