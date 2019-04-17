@@ -231,3 +231,17 @@ div.back>img{
     /* cursor: url(" https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/happy.png"), auto; */
     /* background-image: url(images/soundOn.jpg); */
 }
+
+
+
+
+@media only screen and (max-width:700px){
+
+    .game-container > .stats{
+        display: flex;
+    }
+    .games-played, .attempts, .accuracy,.createdButton{
+        flex-grow: 4;
+       
+    }
+}
