@@ -3,7 +3,6 @@ body{
     height:100vh;
     font-family: "Courier New", Courier, monospace;
     font-weight: bold;
-
 }
 
 .header-container{
@@ -119,6 +118,7 @@ div.picture {
         padding: 1% 0;
 }
 
+
 .card-container{
     font-size:0;
     width:16%;
@@ -162,7 +162,7 @@ div.back>img{
 }
 
 .hiddenDivContainer{
-    display: none; /* remember to comment this out*/
+    display: none; /*remember to comment this out*/
     background-color: black;
     border: 2px black solid;
     position: absolute;
@@ -238,7 +238,6 @@ div.back>img{
 
 @media only screen and (max-width:700px){
 
-
     .header-container{
         height:15%;
     }
@@ -261,4 +260,5 @@ div.back>img{
     .game-area{
         width:100%;
     }
+
 }
