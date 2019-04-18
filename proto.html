@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <title>JS Bin</title>
+    <style>
+        .game-area {
+            height: 600px;
+            width: 400px;
+            background-color: teal;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .cardContainer {
+            display: flex;
+            justify-content: center;
+            height: 15%;
+            width: 32%;
+        }
+
+        .card {
+            position: relative;
+            height: 100%;
+            width: 80%;
+        }
+
+        .front, .back {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="game-area">
+
+    </div>
+</body>
+<script>
+    var pictures = [
+        'images/bears.jpg',
+        'images/beats.jpg',
+        'images/battlestarGalactica.jpg',
+        'images/DwightandMose.jpg',
+        'images/DwightandMoseFarm.jpg',
+        'images/dwightBobblehead.jpg',
+        'images/DwigthElf.jpg',
+        'images/DwigthKrimpus.jpg',
+        'images/jello.jpg'];
+
+    function createCards(pictures) {
+        var pairs = pictures.concat(pictures);
+
+        for (var image of pairs) {
+            var cardCont = $("<div>").addClass('cardContainer');
+            var card = $("<div>").addClass('card');
+            var front = $("<div>").addClass('front');
+            var back = $("<div>").addClass('back');
+
+            var frontImg = $("<img>").attr('src', image);
+            var backImg = $("<img>").attr('src', 'images/schruteFarms.jpg');
+
+            front.append(frontImg);
+            back.append(backImg);
+            card.append(front, back);
+            cardCont.append(card);
+            $(".game-area").append(cardCont);
+        }
+    }
+
+    createCards(pictures);
+</script>
+
+</html>
