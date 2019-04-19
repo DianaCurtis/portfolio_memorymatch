@@ -3,6 +3,7 @@ body{
     height:100vh;
     font-family: "Courier New", Courier, monospace;
     font-weight: bold;
+    background-color: black;
 }
 
 .header-container{
@@ -255,8 +256,12 @@ div.back>img{
         height:15%;
     }
 
+    .game-container{
+        display: block;
+    }
+
     .stats{
-       display: block;
+       /* display: block; */
        height:10%;
        width:100%;
        font-size:0;
@@ -273,5 +278,15 @@ div.back>img{
     .game-area{
         width:100%;
     }
+
+    .card-container{
+        margin-left: 3%;
+        font-size:0;
+        width: 20%;
+        height: 15%;
+        max-width: 24vh;
+    }
+
+
 
 }
