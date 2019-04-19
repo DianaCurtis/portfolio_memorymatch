@@ -103,7 +103,7 @@ function display_stats(){
 }
 
 function reset_stats(){
-    accuracy=0;
+    accuracy=0+'%';
     matches=0;
     attempts=0;
 }
@@ -116,7 +116,7 @@ function resetGame(){
     display_stats();
     $('div.back ').show(); 
     $('div.beenclicked').removeClass('beenclicked');
-    $('.headerText').text('Match The Cards!');
+    $('.headerText').text('You are brave to play again.');
     first_card_clicked=null;
     second_card_clicked=null;
 
@@ -189,7 +189,7 @@ function card_clicked(){
            $('.game-area').addClass('audioLoad');
 
             if(matches===total_possible_matches){
-                    $('.headerText').text('You have won!');
+                    $('.headerText').text('Sadly, you have won.');
             }
        }
        else{
