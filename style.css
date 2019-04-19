@@ -65,7 +65,8 @@ div.picture {
     width:100%;
     /* max-width: 100vh; */
     font-size: 0;
-    /* display: flex; */
+    display: flex;
+    align-items: flex-start;
 }
 
 .game-container >*{
