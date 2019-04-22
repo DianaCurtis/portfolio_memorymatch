@@ -26,12 +26,15 @@ function addClickHandlers(){
     $('.game-area').on('click','.card',display_stats);
     $('.reset-button').on('click', '.reset', resetGame);
 
+    $('.on-audio-button').on('click','.onaudio',enableAudio);
+    $('.off-audio-button').on('click','.offaudio',disableAudio);
 }
 
-
+function disableAudio(){
+    audioActive = true;
+}
 
 function dwigthSoundIdiot() {
-
     audioActive = true;
     var soundIdiot = new Audio('sounds/dwightIdiot.mp3');
 
@@ -55,7 +58,6 @@ function DwightSounds(soundID){
         'images/DwigthElf.jpg': {'sound': 'sounds/DwightElf.mp3'},
         'images/DwigthKrimpus.jpg': {'sound': 'sounds/DwightDutchChristmas.mp3'}
     };
-
 
 
     if (!cardInfo[soundID]){
@@ -178,10 +180,9 @@ function card_clicked(){
            
            matches++;
            
-
-           if(games_played===0){
-               DwightSounds(first_card_clicked.find('.front img').attr('src'));
-           }
+           
+            DwightSounds(first_card_clicked.find('.front img').attr('src'));
+           
 
            first_card_clicked=null;
            second_card_clicked=null;
