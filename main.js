@@ -24,7 +24,7 @@ function addClickHandlers(){
     $('.hiddenDivContainer').on('click','.closeModel',closeModel);
     $('.game-area').on('click','.card',card_clicked);
     $('.game-area').on('click','.card',display_stats);
-    $('.createdButton').on('click', '.reset', resetGame);
+    $('.reset-button').on('click', '.reset', resetGame);
 
 }
 

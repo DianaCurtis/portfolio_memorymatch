@@ -83,12 +83,12 @@ div.picture {
     font-size: 4vmin;
 }
 
-.games-played, .attempts, .accuracy, .createdButton, .about{
+.games-played, .attempts, .accuracy, .button-area, .about{
     width:100%;
     height:25%;
 }
 
-.games-played, .attempts, .accuracy,.createdButton{
+.games-played, .attempts, .accuracy,.button-area{
     text-align: center;
 }
 
@@ -102,7 +102,7 @@ div.picture {
 .accuracy{
     background-color:tan;
 }
-.createdButton{
+.button-area{
     background-color:black;
 }
 
@@ -266,7 +266,7 @@ div.back>img{
        width:100%;
        font-size:0;
     }
-    .games-played, .attempts, .accuracy, .createdButton{
+    .games-played, .attempts, .accuracy, .button-area{
         display: inline-block;
         height:100%;
         width:25%;
