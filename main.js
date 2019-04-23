@@ -10,6 +10,8 @@ var attempts = 0;
 var accuracy = 0;
 var games_played = 0;
 var audioActive = false;
+var audioOn = false;
+var player = new Audio();
 
 
 
@@ -26,15 +28,56 @@ function addClickHandlers(){
     $('.game-area').on('click','.card',display_stats);
     $('.reset-button').on('click', '.reset', resetGame);
 
-    $('.on-audio-button').on('click','.onaudio',enableAudio);
-    $('.off-audio-button').on('click','.offaudio',disableAudio);
+    $('.on-audio-button').on('click','.on-audio',enableSound);
+    $('.off-audio-button').on('click','.off-audio',disableSound);
 }
 
-function disableAudio(){
-    audioActive = true;
+
+function enableSound(){
+    audioOn = true;
 }
+
+function disableSound(){
+    audioOn = false;
+}
+
+
+function playSound(filename,volume=1) {
+
+   
+    var cardInfo={
+        'images/bears.jpg': {'sound': 'sounds/Bears.mp3'},
+        'images/beats.jpg': {'sound': 'sounds/Beats.mp3'},
+        'images/battlestarGalactica.jpg': {'sound': 'sounds/BattleStarGallactica.mp3'},
+        'images/DwightandMose.jpg': {'sound': 'sounds/MoseBestFriend.mp3'},
+        'images/dwightBobblehead.jpg': {'sound': 'sounds/BobbleHead.mp3'},
+        'images/jello.jpg': {'sound': 'sounds/StaplerJello.mp3'},
+        'images/DwightandMoseFarm.jpg': {'sound': 'sounds/DwightSchruteFarms.mp3'},
+        'images/DwigthElf.jpg': {'sound': 'sounds/DwightElf.mp3'},
+        'images/DwigthKrimpus.jpg': {'sound': 'sounds/DwightDutchChristmas.mp3'}
+    };
+
+
+    if(player.paused===false || audioOn===false){
+            return;
+    }
+  
+
+    if(filename.lastIndexOf('jpg')>-1){
+        filename = cardInfo[filename]['sound'];
+    }
+
+    player.src = filename;
+    player.volume = volume;
+    player.play();
+  
+}
+
+
+/*
 
 function dwigthSoundIdiot() {
+
     audioActive = true;
     var soundIdiot = new Audio('sounds/dwightIdiot.mp3');
 
@@ -44,6 +87,8 @@ function dwigthSoundIdiot() {
     };
     
 }
+
+
 
 
 function DwightSounds(soundID){
@@ -75,7 +120,7 @@ function DwightSounds(soundID){
     
 }
 
-
+*/
 
 
 function closeModel(){
@@ -180,21 +225,23 @@ function card_clicked(){
            
            matches++;
            
-           
-            DwightSounds(first_card_clicked.find('.front img').attr('src'));
+           $('.game-area').addClass('audioLoad');
+          //DwightSounds(first_card_clicked.find('.front img').attr('src'));
+            playSound(first_card_clicked.find('.front img').attr('src'));
            
 
            first_card_clicked=null;
            second_card_clicked=null;
 
-           $('.game-area').addClass('audioLoad');
+          
 
             if(matches===total_possible_matches){
                     $('.headerText').text('Sadly, you have won.');
             }
        }
        else{
-           dwigthSoundIdiot();
+           //dwigthSoundIdiot();
+           playSound('sounds/dwightIdiot.mp3');
            timeOut = setTimeout(timerAddBack,2000);
        }
        accuracy=(matches/attempts)*100;
