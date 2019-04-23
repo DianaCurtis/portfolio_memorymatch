@@ -10,7 +10,7 @@ var attempts = 0;
 var accuracy = 0;
 var games_played = 0;
 var audioActive = false;
-var audioOn = false;
+var soundOn = false;
 var player = new Audio();
 
 
@@ -34,17 +34,22 @@ function addClickHandlers(){
 
 
 function enableSound(){
-    audioOn = true;
+    soundOn = true;
 }
 
 function disableSound(){
-    audioOn = false;
+    soundOn = false;
 }
 
 
 function playSound(filename,volume=1) {
+    if(player.paused===false || soundOn===false){
+        return;
+    }
 
+    audioActive = true;
    
+
     var cardInfo={
         'images/bears.jpg': {'sound': 'sounds/Bears.mp3'},
         'images/beats.jpg': {'sound': 'sounds/Beats.mp3'},
@@ -57,19 +62,21 @@ function playSound(filename,volume=1) {
         'images/DwigthKrimpus.jpg': {'sound': 'sounds/DwightDutchChristmas.mp3'}
     };
 
-
-    if(player.paused===false || audioOn===false){
-            return;
-    }
-  
-
     if(filename.lastIndexOf('jpg')>-1){
+        $('.game-area').addClass('audioLoad');
         filename = cardInfo[filename]['sound'];
     }
 
     player.src = filename;
     player.volume = volume;
     player.play();
+
+
+    player.onended = function() {
+        audioActive = false;
+        $('.game-area').removeClass('audioLoad');
+    };
+
   
 }
 
@@ -225,8 +232,10 @@ function card_clicked(){
            
            matches++;
            
-           $('.game-area').addClass('audioLoad');
+                
+          
           //DwightSounds(first_card_clicked.find('.front img').attr('src'));
+        
             playSound(first_card_clicked.find('.front img').attr('src'));
            
 
