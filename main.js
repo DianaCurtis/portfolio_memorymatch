@@ -23,6 +23,8 @@ function initializeApp(){
 
 function addClickHandlers(){
 
+    $('body').on('click','.header-container',closeModel);
+    $('body').on('click','.game-container',closeModel);
     $('.hiddenDivContainer').on('click','.closeModel',closeModel);
     $('.game-area').on('click','.card',card_clicked);
     $('.game-area').on('click','.card',display_stats);

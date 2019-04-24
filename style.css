@@ -163,34 +163,40 @@ div.back>img{
 
 
 .hiddenDivContainer{
-    display: none; /*remember to comment this out*/
+    /*remember to comment this out*/
+    /* display: none;  */
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
     background-color: black;
     border: 2px black solid;
     position: absolute;
     top:15%;
-    left:20%;
-    height:75%;
-    width:75%;
+    left: 15%;
+    height: 70%;
+    width: 75%;
 }
 
 .hiddenImageContainer{
     background-color: black;
     border: 2px black solid;
-    position:relative;
-    height:50%;
-    width:50%;
-    left:25%;
-    top:15%;
+    /* position:relative; */
+    height: 70%;
+    /* width:50%; */
+    /* left:25%; */
+    /* top:15%; */
 }
 
 
+
 .hiddenImage{
+    background-image: url("images/dwight.jpg");
     border: 2px black solid;
     height:100%;
     width:100%;
     background-size:cover;
     background-position:center;
-    position:absolute;
+    /* position:absolute; */
 }
 
 .imageSizing{
@@ -205,17 +211,20 @@ div.back>img{
 }
 
 .closeModelButton{
-    position: relative;
-    top: -15%;
+    /* position: relative; */
+    /* top: 25%; */
+    /* left: 20%; */
+    display: flex;
+    justify-content: center;
+    /* text-align: center; */
+    margin-top: 3%;
 }
 
-
-
-.closeModel{
+/* .closeModel{
     position:relative;
     bottom:0%;
     left:5%;
-}
+} */
 
 
 .hide{
@@ -281,6 +290,13 @@ div.back>img{
         height: 15%;
         max-width: 24vh;
     }
+
+    /* .closeModelButton{
+        position: relative;
+        top: 25%;
+        left: 25%;
+    } */
+
 
 
 
