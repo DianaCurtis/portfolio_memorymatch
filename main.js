@@ -26,10 +26,10 @@ function addClickHandlers(){
     $('.hiddenDivContainer').on('click','.closeModel',closeModel);
     $('.game-area').on('click','.card',card_clicked);
     $('.game-area').on('click','.card',display_stats);
-    $('.reset-button').on('click', '.reset', resetGame);
+    $('.reset').on('click', '.reset-button', resetGame);
 
-    $('.on-audio-button').on('click','.on-audio',enableSound);
-    $('.off-audio-button').on('click','.off-audio',disableSound);
+    $('.on-audio').on('click','.on-audio-button',enableSound);
+    $('.off-audio').on('click','.off-audio-button',disableSound);
 }
 
 
