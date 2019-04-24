@@ -2,14 +2,15 @@ body{
     margin:0;
     height:100vh;
     font-family: "Courier New", Courier, monospace;
-
+    font-weight: bold;
+    background-color: black;
 }
 
 .header-container{
     height:25%;
     width:100%;
     background-color:goldenrod;
-    /*text-align: center;*/
+    font-size: 0;
 }
 
 .logoContainer{
@@ -27,34 +28,42 @@ body{
     top: 10%;
 }
 
-.picture>img{
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    width: 80%;
+
+
+div.picture {
+    background-image: url("images/DwightMoseSeaSaw.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position:center;
+    height:100%;
 }
 
 .headerDisplay{
     display:inline-block;
     height:100%;
-    width:70%;
+    width:75%;
     position:relative;
-    top:0%;
+    top:0;
 }
 
 
 .headerText{
     position: absolute;
     top: 25%;
-    left: 30%;
-    font-size: 50px; /*not use % because the % comes from the font-size not the container*/
+    left: 25%;
+    font-size: 5vmin; 
 }
-
 
 .game-container{
     height:75%;
     width:100%;
+    font-size: 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.game-container >*{
+    font-size: initial;
 }
 
 .stats{
@@ -63,15 +72,15 @@ body{
     display: inline-block;
     background-color: plum;
     vertical-align: top;
-    font-size: 20px;
+    font-size: 4vmin;
 }
 
-.games-played, .attempts, .accuracy, .createdButton, .about{
+.games-played, .attempts, .accuracy, .button-area, .about{
     width:100%;
-    height:20%;
+    height:25%;
 }
 
-.games-played, .attempts, .accuracy,.createdButton{
+.games-played, .attempts, .accuracy,.button-area{
     text-align: center;
 }
 
@@ -85,89 +94,109 @@ body{
 .accuracy{
     background-color:tan;
 }
-.createdButton{
+.button-area{
     background-color:black;
 }
 
 .game-area{
-    height:100%;
-    width:74%;
-    display: inline-block;
-    /*background-color:deeppink;*/
+    width: 75%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    font-size: 0;
 }
+
 
 .row{
         width:100%;
-        height:33%;
         font-size:0;
+        display: flex;
+        align-items: stretch;
+        padding: 1% 0;
 }
+
 
 .card-container{
+    margin-bottom: 3%;
     font-size:0;
-    width:16%;
-    height:100%;
-    display: inline-block;
-    background-color:black;
+    width: 16%;
+    height: 15%;
+    background-color: black;
+    display: flex;
+    align-items: center;
 }
+
 
 .card{
-    height: 80%;
+    height: 100%;
     width: 80%;
     position:relative;
-    left:10%;
-    top:10%;
-    display: inline-block;
 }
 
+div.back {
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
 
 .front,.back{
-    height: 100%;
     width:100%;
     background-size:cover;
     background-position:center;
-    position:absolute;
+    display: flex;
+    align-items: center;
+    background-color: black;
 }
 
 div.front>img{
-    height:100%;
     width:100%;
 }
 
 
 div.back>img{
-    height:100%;
     width:100%;
+    flex-shrink: 0;
 }
 
+
+
 .hiddenDivContainer{
-    /* display: none;*/
+    /*remember to comment this out*/
+    /* display: none;  */
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
     background-color: black;
     border: 2px black solid;
     position: absolute;
     top:15%;
-    left:20%;
-    height:75%;
-    width:75%;
+    left: 15%;
+    height: 70%;
+    width: 75%;
 }
 
 .hiddenImageContainer{
     background-color: black;
     border: 2px black solid;
-    position:relative;
-    height:50%;
-    width:50%;
-    left:25%;
-    top:15%;
+    /* position:relative; */
+    height: 70%;
+    /* width:50%; */
+    /* left:25%; */
+    /* top:15%; */
 }
 
 
+
 .hiddenImage{
+    background-image: url("images/dwight.jpg");
     border: 2px black solid;
     height:100%;
     width:100%;
     background-size:cover;
     background-position:center;
-    position:absolute;
+    /* position:absolute; */
 }
 
 .imageSizing{
@@ -181,18 +210,21 @@ div.back>img{
     color: white;
 }
 
-.closeModalButton{
-    position: relative;
-    top: -15%;
+.closeModelButton{
+    /* position: relative; */
+    /* top: 25%; */
+    /* left: 20%; */
+    display: flex;
+    justify-content: center;
+    /* text-align: center; */
+    margin-top: 3%;
 }
 
-
-
-.closeModal{
+/* .closeModel{
     position:relative;
     bottom:0%;
     left:5%;
-}
+} */
 
 
 .hide{
@@ -203,3 +235,69 @@ div.back>img{
     background-color:gray;
 }
 
+
+.audioLoad{
+    cursor: wait; 
+    /* cursor: url("images/soundOn.png"), copy; */
+    /* cursor: url(" https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/happy.png"), auto; */
+    /* background-image: url(images/soundOn.jpg); */
+}
+
+.reset-button,.on-audio-button,.off-audio-button{
+    cursor: pointer;
+}
+
+
+
+@media only screen and (max-width:700px){
+
+    .header-container{
+        height:15%;
+    }
+
+    .game-container{
+        display: block;
+    }
+
+    .stats{
+       /* display: block; */
+       height:10%;
+       width:100%;
+       font-size:0;
+       min-height: 15vh;
+    }
+    .games-played, .attempts, .accuracy, .button-area{
+        display: inline-block;
+        height:100%;
+        width:25%;
+        font-size: 0.7rem;
+        vertical-align: top;
+    }
+
+    .reset-button,.on-audio-button,.off-audio-button{
+        width:100%;
+        font-size: 2.5vmin;
+    }
+
+    .game-area{
+        width:100%;
+    }
+
+    .card-container{
+        margin-left: 3%;
+        font-size:0;
+        width: 20%;
+        height: 15%;
+        max-width: 24vh;
+    }
+
+    /* .closeModelButton{
+        position: relative;
+        top: 25%;
+        left: 25%;
+    } */
+
+
+
+
+}
