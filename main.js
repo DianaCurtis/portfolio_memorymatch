@@ -17,6 +17,7 @@ var player = new Audio();
 
 function initializeApp(){
     addClickHandlers();
+    randomizeCards();
 }
 
 
@@ -78,58 +79,7 @@ function playSound(filename,volume=1) {
         audioActive = false;
         $('.game-area').removeClass('audioLoad');
     };
-
-  
 }
-
-
-/*
-
-function dwigthSoundIdiot() {
-
-    audioActive = true;
-    var soundIdiot = new Audio('sounds/dwightIdiot.mp3');
-
-    soundIdiot.play();
-    soundIdiot.onended = function() {
-        audioActive = false;
-    };
-    
-}
-
-
-
-
-function DwightSounds(soundID){
-    var cardInfo={
-        'images/bears.jpg': {'sound': 'sounds/Bears.mp3'},
-        'images/beats.jpg': {'sound': 'sounds/Beats.mp3'},
-        'images/battlestarGalactica.jpg': {'sound': 'sounds/BattleStarGallactica.mp3'},
-        'images/DwightandMose.jpg': {'sound': 'sounds/MoseBestFriend.mp3'},
-        'images/dwightBobblehead.jpg': {'sound': 'sounds/BobbleHead.mp3'},
-        'images/jello.jpg': {'sound': 'sounds/StaplerJello.mp3'},
-        'images/DwightandMoseFarm.jpg': {'sound': 'sounds/DwightSchruteFarms.mp3'},
-        'images/DwigthElf.jpg': {'sound': 'sounds/DwightElf.mp3'},
-        'images/DwigthKrimpus.jpg': {'sound': 'sounds/DwightDutchChristmas.mp3'}
-    };
-
-
-    if (!cardInfo[soundID]){
-        return;
-    }
-    var targetedItemSound=cardInfo[soundID]['sound'] ;
-
-    audioActive = true;
-    var dwightSound = new Audio(targetedItemSound);
-    dwightSound.play();
-    dwightSound.onended = function() {
-        audioActive = false;
-        $('.game-area').removeClass('audioLoad');
-    };
-    
-}
-
-*/
 
 
 function closeModel(){
