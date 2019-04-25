@@ -183,10 +183,6 @@ function card_clicked(){
        if(first_card_clicked.find('.front img').attr('src') === second_card_clicked.find('.front img').attr('src')){
            
            matches++;
-           
-                
-          
-          //DwightSounds(first_card_clicked.find('.front img').attr('src'));
         
             playSound(first_card_clicked.find('.front img').attr('src'));
            
@@ -201,7 +197,7 @@ function card_clicked(){
             }
        }
        else{
-           //dwigthSoundIdiot();
+      
            playSound('sounds/dwightIdiot.mp3');
            timeOut = setTimeout(timerAddBack,2000);
        }

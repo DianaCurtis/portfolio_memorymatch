@@ -166,7 +166,6 @@ div.back>img{
     /*remember to comment this out*/
     /* display: none;  */
     display: flex;
-    /* justify-content: center; */
     flex-direction: column;
     background-color: black;
     border: 2px black solid;
@@ -180,11 +179,7 @@ div.back>img{
 .hiddenImageContainer{
     background-color: black;
     border: 2px black solid;
-    /* position:relative; */
     height: 70%;
-    /* width:50%; */
-    /* left:25%; */
-    /* top:15%; */
 }
 
 
@@ -196,7 +191,6 @@ div.back>img{
     width:100%;
     background-size:cover;
     background-position:center;
-    /* position:absolute; */
 }
 
 .imageSizing{
@@ -211,21 +205,10 @@ div.back>img{
 }
 
 .closeModelButton{
-    /* position: relative; */
-    /* top: 25%; */
-    /* left: 20%; */
     display: flex;
     justify-content: center;
-    /* text-align: center; */
     margin-top: 3%;
 }
-
-/* .closeModel{
-    position:relative;
-    bottom:0%;
-    left:5%;
-} */
-
 
 .hide{
     display: none;
@@ -238,9 +221,6 @@ div.back>img{
 
 .audioLoad{
     cursor: wait; 
-    /* cursor: url("images/soundOn.png"), copy; */
-    /* cursor: url(" https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/happy.png"), auto; */
-    /* background-image: url(images/soundOn.jpg); */
 }
 
 .reset-button,.on-audio-button,.off-audio-button{
@@ -260,7 +240,6 @@ div.back>img{
     }
 
     .stats{
-       /* display: block; */
        height:10%;
        width:100%;
        font-size:0;
@@ -291,13 +270,4 @@ div.back>img{
         max-width: 24vh;
     }
 
-    /* .closeModelButton{
-        position: relative;
-        top: 25%;
-        left: 25%;
-    } */
-
-
-
-
-}
+ }
